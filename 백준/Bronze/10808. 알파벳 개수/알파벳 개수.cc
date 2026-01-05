@@ -8,11 +8,11 @@ int main(){
   string s;
   cin >> s;
 
-  for(int i = int('a'); i <= int('z'); i++){
-    int count = 0;
-    for(auto c : s){
-      if(int(c) == i) count++;
-    }
-    cout << count << " ";
+  int alphabets[27] = {};
+  for(auto c : s){
+    alphabets[(c-int('a'))]++;
+  }
+  for(int i = 0; i < 26; i++){
+    cout << alphabets[i] << " ";
   }
 }
