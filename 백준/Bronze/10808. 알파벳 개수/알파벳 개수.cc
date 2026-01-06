@@ -7,10 +7,9 @@ int main(){
 
   string s;
   cin >> s;
-
-  int alphabets[27] = {};
+  int alphabets[26] = {};
   for(auto c : s){
-    alphabets[(c-int('a'))]++;
+    alphabets[int(c - 'a')]++;
   }
   for(int i = 0; i < 26; i++){
     cout << alphabets[i] << " ";
