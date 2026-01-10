@@ -2,41 +2,27 @@
 using namespace std;
 
 int main(){
-  ios::sync_with_stdio(0);
-  cin.tie(0);
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    char results[5] = {'E', 'A', 'B', 'C', 'D'};
 
-  int arr1[4], arr2[4], arr3[4];
-  for(int i = 0; i < 4; i++){
-    cin >> arr1[i];
-  }
-  for(int i = 0; i < 4; i++){
-    cin >> arr2[i];
-  }
-  for(int i = 0; i < 4; i++){
-    cin >> arr3[i];
-  }
+    int a;
+    int countZeros = 0;
+    int trials = 3;
+    while(trials > 0){
+        for(int i = 0; i < 4; i++){
+            cin >> a;
+            if(a == 0) countZeros++;
+        }
+        cout << results[countZeros] << "\n";
+        countZeros = 0;
 
-  int result;
-  result = count(arr1, arr1 + 4, 0);
-  if(result == 1) cout << "A" << "\n";
-  else if (result == 2) cout << "B" << "\n";
-  else if (result == 3) cout << "C" << "\n";
-  else if (result == 4) cout << "D" << "\n";
-  else if (result == 0) cout << "E" << "\n";
-
-  result = count(arr2, arr2 + 4, 0);
-  if(result == 1) cout << "A" << "\n";
-  else if (result == 2) cout << "B" << "\n";
-  else if (result == 3) cout << "C" << "\n";
-  else if (result == 4) cout << "D" << "\n";
-  else if (result == 0) cout << "E" << "\n";
-
-  result = count(arr3, arr3 + 4, 0);
-  if(result == 1) cout << "A" << "\n";
-  else if (result == 2) cout << "B" << "\n";
-  else if (result == 3) cout << "C" << "\n";
-  else if (result == 4) cout << "D" << "\n";
-  else if (result == 0) cout << "E" << "\n";
-
-
+        trials--;
+    }
+    
+    //도: 0 1 1 1 (1개) A
+    //개: 0 0 1 1 (2개)
+    //걸: 0 0 0 1
+    //윷: 0 0 0 0 
+    //모: 1 1 1 1
 }
