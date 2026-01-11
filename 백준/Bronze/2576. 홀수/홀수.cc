@@ -2,28 +2,24 @@
 using namespace std;
 
 int main(){
-  ios::sync_with_stdio(0);
-  cin.tie(0);
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    int sumOfOdds = 0;
+    int leastOddNum =100;
 
-  vector<int> oddnumbers;
-  int result;
-  int sum_odd = 0;
-  bool odd_exists = false;
-  for(int i = 0; i < 7; i++){
-    cin >> result;
+    for(int i = 0; i < 7; i++){
+        int a = 0; 
+        cin >> a;
 
-    if(result % 2 == 1){
-      odd_exists = true;
-      oddnumbers.push_back(result);
-      sum_odd += result;
+        if(a % 2 == 1) {
+            sumOfOdds += a;
+            if(a <= leastOddNum) leastOddNum = a;
+        }
     }
-  }
 
-  sort(oddnumbers.begin(), oddnumbers.end());
-  if(!odd_exists){
-    cout << -1;
-  } else {
-    cout << sum_odd << "\n";
-    cout << oddnumbers[0];
-  }
+    if(sumOfOdds == 0) cout << "-1";
+    else {
+        cout << sumOfOdds << "\n";
+        cout << leastOddNum;
+    }
 }
