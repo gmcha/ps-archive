@@ -6,29 +6,30 @@ int main(){
     cin.tie(0);
 
     int n;
-    int arr[21];
     cin >> n;
+
+    int log[n];
     for(int i = 0; i < n; i++){
-        cin >> arr[i];
+        cin >> log[i];
     }
 
-    // 영식 요금제 - 30초, 10원
-    int sum_y = 0;
+    // 영식 요금제
+    int sumY = 0;
     for(int i = 0; i < n; i++){
-        sum_y += (int(arr[i] / 30) + 1) * 10;
+        sumY += ((log[i] / 30) + 1) * 10;
     }
 
     // 민식 요금제
-    int sum_m = 0;
+    int sumM = 0;
     for(int i = 0; i < n; i++){
-        sum_m += (int(arr[i] / 60) + 1) * 15;
+        sumM += ((log[i] / 60) + 1) * 15;
     }
 
-    if(sum_y == sum_m){
-        cout << "Y M " << sum_m; 
-    } else if (sum_m < sum_y){
-        cout << "M " << sum_m; 
+    if(sumY == sumM){
+        cout << "Y M " << sumY;
+    } else if (sumY < sumM){
+        cout << "Y " << sumY;
     } else {
-        cout << "Y " << sum_y; 
+        cout << "M " << sumM;
     }
 }
