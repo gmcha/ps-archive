@@ -5,17 +5,14 @@ int main(){
     ios::sync_with_stdio(0);
     cin.tie(0);
 
-    int n;
-    cin >> n;
+    int N;
+    cin >> N;
 
-    for(int i = 1; i <= n; i++){
-        for(int j = 1; j <= n - i; j++){
+    for(int i = 0; i < N; i++){
+        for(int j = 0; j < N - i - 1; j++){
             cout << " ";
         }
-        for(int k = 1; k <= i; k++){
-            cout << "*";
-        }
-        for(int l = 1; l <= i - 1; l++){
+        for(int j = 0; j < 2*(i+1) - 1; j++){
             cout << "*";
         }
         cout << "\n";
