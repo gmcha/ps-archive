@@ -5,18 +5,12 @@ int main(){
     ios::sync_with_stdio(0);
     cin.tie(0);
 
-    int N; 
+    int N;
     cin >> N;
 
     for(int i = 0; i < N; i++){
-        int j = 0;
-        for(; j < i; j++) cout << " ";
-        for(; j < N; j++) cout << "*";
-        for(int k = 0; k < N - i - 1; k++) cout << "*";
+        for(int j = 0; j < i; j++) cout << " ";
+        for(int k = 0; k < 2*N - (2*i + 1); k++) cout << "*";
         cout << "\n";
-
     }
-    // 5~1개의 별
-
-    // 4~0개의 별
 }
