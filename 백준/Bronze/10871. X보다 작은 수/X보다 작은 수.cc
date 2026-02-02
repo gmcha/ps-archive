@@ -5,12 +5,12 @@ int main(){
     ios::sync_with_stdio(0);
     cin.tie(0);
 
-    int n, x;
-    cin >> n >> x;
+    int N, X;
+    cin >> N >> X;
 
     int a;
-    for(int i = 0; i < n; i++){
+    for(int i = 0; i < N; i++){
         cin >> a;
-        if(a < x) cout << a << " ";
+        if(a < X) cout << a << " ";
     }
 }
