@@ -5,20 +5,14 @@ int main(){
     ios::sync_with_stdio(0);
     cin.tie(0);
 
-    // 배열(10개 칸) - 초기값 0
-    // 입력: A, B, C
-    // product 찾기
-    
-    // (product의 각 자릿수를 순회하며) - 10번 이하
-    // [인덱스: 그 자리에 수]에 ++하기
+    // 재료: 배열[10], 원소 모두 0
+    int arr[10] = {};
 
-    // 출력: 각 배열 칸의 값 반환
-
-    int arr[10];
-    fill(arr, arr + 10, 0);
-
+    // 입력: 자연수 A, B, C
     int A, B, C;
     cin >> A >> B >> C;
+
+    // A*B*C = product일 때, product의 각 자릿수 digit에 대하여 arr[digit]++
     int product = A*B*C;
 
     while(product > 0) {
@@ -27,8 +21,8 @@ int main(){
         product /= 10;
     }
 
+    // 출력: arr의 각 원소
     for(int i = 0; i < 10; i++){
         cout << arr[i] << "\n";
     }
-
 }
