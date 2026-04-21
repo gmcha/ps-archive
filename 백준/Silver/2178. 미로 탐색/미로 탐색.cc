@@ -14,14 +14,12 @@ int main(){
     cin.tie(0);
 
     cin >> n >> m;
-    for(int i = 0; i < n; i++){
-        cin >> board[i];
-    }
-    for(int i = 0; i < n; i++) fill(dist[i], dist[i] + m, -1);
+    for(int i = 0; i < n; i++) cin >> board[i];
+    for(int i = 0; i < n; i++) fill(dist[i], dist[i] + m, -1); // dist 초기화
 
     queue<pair<int, int>> Q;
-    Q.push({0, 0});
     dist[0][0] = 0;
+    Q.push({0, 0});
 
     while(!Q.empty()){
         pair<int, int> cur = Q.front(); Q.pop();
@@ -30,11 +28,12 @@ int main(){
             int nx = cur.X + dx[dir];
             int ny = cur.Y + dy[dir];
             if(nx < 0 || nx >= n || ny < 0 || ny >= m) continue;
-            if(dist[nx][ny] != -1 || board[nx][ny] != '1') continue;
+            if(dist[nx][ny] != -1 || board[nx][ny] == '0') continue;
             Q.push({nx, ny});
             dist[nx][ny] = dist[cur.X][cur.Y] + 1;
         }
     }
 
-    cout << dist[n-1][m-1] + 1;
+    cout << dist[n - 1][m - 1] + 1;
+
 }
