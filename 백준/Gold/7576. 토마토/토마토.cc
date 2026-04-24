@@ -14,12 +14,12 @@ int main(){
     cin.tie(0);
 
     cin >> m >> n;
-    queue<pair<int,int>> Q;
+    queue<pair<int, int>> Q;
     for(int i = 0; i < n; i++){
         for(int j = 0; j < m; j++){
-            cin >> board[i][j]; // 1, 0, -1
-            if(board[i][j] == 1) Q.push({i, j});
+            cin >> board[i][j];
             if(board[i][j] == 0) dist[i][j] = -1;
+            if(board[i][j] == 1) Q.push({i, j});
         }
     }
 
